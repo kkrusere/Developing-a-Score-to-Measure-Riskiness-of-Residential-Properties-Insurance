@@ -54,7 +54,7 @@ with col3:
     
     """
 
-    st.image("assets/nycOpenData.png", caption="https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9")
+    st.image("https://github.com/kkrusere/Developing-a-Score-to-Measure-Riskiness-of-Residential-Properties-Insurance/blob/main/assets/nycOpenData.png?raw=1", caption="https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9")
 
 
 st.markdown("----")
