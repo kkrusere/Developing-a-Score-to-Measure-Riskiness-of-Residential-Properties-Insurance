@@ -12,7 +12,7 @@ with col1:
     st.write("")
 
 with col2:
-    st.markdown(" <h1 style='text-align: center;'>Developing a Score to Measure Riskiness of Residential Properties Insurance</h1>", unsafe_allow_html=True)
+    st.markdown(" <h1 style='text-align: center;'>Developing a Score to Measure Riskiness of Residential Properties as part of an Residential Insurance underwriting process</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center;'><i>Developing a Score to Measure Riskiness of Residential buildings, Homes, Apartments and Condos as "
                 "part of an insurance policy underwriting. Insurance underwriting is how an insurance company evaluates its risk. In this project, we "
                 "identify and explore multiple data sources to collect variables that could be used to develop a score that measures the riskiness of "
