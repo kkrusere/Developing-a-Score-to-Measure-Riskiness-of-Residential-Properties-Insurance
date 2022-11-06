@@ -60,8 +60,11 @@ with col3:
 st.markdown("----")
 st.markdown("### Data Analysis")
 st.markdown("##### NYC 311 Residential Service Requests and Complaints")
+st.markdown("<center><img src='https://github.com/kkrusere/Developing-a-Score-to-Measure-Riskiness-of-Residential-Properties-Insurance/blob/main/assets/nyc311-logo.png?raw=1' width=600/></center>")
 st.markdown("##### NYC Fire Department Residential Incidence")
+st.markdown("<center><img src='https://github.com/kkrusere/Developing-a-Score-to-Measure-Riskiness-of-Residential-Properties-Insurance/blob/main/assets/FDNYC.png?raw=1' width=600/></center>")
 st.markdown("##### NYC Police Department Residential Incidences and Cases")
+st.markdown("<center><img src='https://github.com/kkrusere/Developing-a-Score-to-Measure-Riskiness-of-Residential-Properties-Insurance/blob/main/assets/NYPD.png?raw=1' width=600/></center>")
 
 st.markdown("----")
 st.markdown("### Score Measurements by Borough and/or Zipcode")
