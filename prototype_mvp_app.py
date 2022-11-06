@@ -65,7 +65,7 @@ st.markdown("#### NYC Police Department Residential Incidences and Cases")
 
 st.markdown("----")
 st.markdown("### Score Measurements by Borough and/or Zipcode")
-t.markdown("\nHere we show the scoring measurements of each of the Boroughs and/or Zipcodes with respect to the fire department incedences, police department cases and incidences, and the 311 residential service request and complaints. So, depending on the zipcode or the borough in New York City, there is a ranking measurement score that has been assigned to it from our modeling and cluster analysis. 
+t.markdown("Here we show the scoring measurements of each of the Boroughs and/or Zipcodes with respect to the fire department incedences, police department cases and incidences, and the 311 residential service request and complaints. So, depending on the zipcode or the borough in New York City, there is a ranking measurement score that has been assigned to it from our modeling and cluster analysis. 
 st.markdown("#### NYC 311 Residential Service Requests and Complaints Ranking and Score")
 st.markdown("#### NYC Fire Department Residential Incidence Ranking and Score")
 st.markdown("#### NYC Police Department Residential Incidences and Cases Ranking and Score")
