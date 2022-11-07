@@ -38,10 +38,14 @@ with col1:
     st.markdown("Developing a Score to Measure the Riskiness of Residential buildings, Homes, Apartments, and Condos as part of an insurance policy underwriting. "
                 "The idea is to design and develop a model that will aid insurance underwriters in assessing the riskiness of residential properties in New York City. "
                 "For this, we utilized data collected from the NYC Opendata repository, created a Machine Learning Clustering model, and Analyzed the clusters, "
-                "depending on the characteristics of the clusters, they were ranked thus providing a scoring mechanism.")
+                "depending on the characteristics of the clusters, they were ranked thus providing a scoring mechanism. We used the FDNY incident data, the NYPD crime "
+                "data and the 311 service request and complaints data for our ML clustering models and for the scoring measurement.")
     st.markdown("***Methodology:*** ")
     """
-    1. 
+    1. Data Collection 
+    2. Data Cleaning, Preparation and Preprocessing 
+    3. Modeling and Evaluation (Creating clusters in each of the datasets using Kmodes clustering algorithm)
+    4. Analysis of the clusters creating a ranking score measure for each of the datasets
 
     """
     st.markdown("In addition, we created this `Streamlit` interactive data visualization "
