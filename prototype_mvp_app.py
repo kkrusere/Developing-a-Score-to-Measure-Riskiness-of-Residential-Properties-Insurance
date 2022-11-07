@@ -75,18 +75,21 @@ st.markdown("### Data Analysis")
 col1, col2,col3 = st.columns((1,0.1,1))
 with col1:
     st.markdown("##### NYC 311 Residential Service Requests and Complaints")
-with col3:
     st.markdown("<center><img src='https://github.com/kkrusere/Developing-a-Score-to-Measure-Riskiness-of-Residential-Properties-Insurance/blob/main/assets/nyc311-logo.png?raw=1' width=100/></center>", unsafe_allow_html=True)
+with col3:
+    pass
 col1, col2,col3 = st.columns((1,0.1,1))
 with col1:
     st.markdown("##### NYC Fire Department Residential Incidence")
-with col3:
     st.markdown("<center><img src='https://github.com/kkrusere/Developing-a-Score-to-Measure-Riskiness-of-Residential-Properties-Insurance/blob/main/assets/FDNYC.png?raw=1' width=100/></center>", unsafe_allow_html=True)
+with col3:
+    pass
 col1, col2,col3 = st.columns((1,0.1,1))
 with col1:
     st.markdown("##### NYC Police Department Residential Incidences and Cases")
-with col3:
     st.markdown("<center><img src='https://github.com/kkrusere/Developing-a-Score-to-Measure-Riskiness-of-Residential-Properties-Insurance/blob/main/assets/NYPD.png?raw=1' width=100/></center>", unsafe_allow_html=True)
+with col3:
+    pass
 
 st.markdown("----")
 st.markdown("### Score Measurements by Borough and/or Zipcode")
