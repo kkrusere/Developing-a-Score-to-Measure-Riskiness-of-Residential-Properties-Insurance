@@ -113,7 +113,14 @@ with col2:
         if borough_option != " ":
             st.success(f"we are going to look at {borough_option}")
     else:
-        zipcode = int(st.text_input("Please input the zipcode:"))    
+        try:
+            zipcode = st.text_input("Please input the zipcode:")
+            if zipcode != "":
+                zipcode = int()
+            else:
+                pass
+        except:
+            st.warning("Please enter a valid Zipcode")    
 st.markdown("##### NYC 311 Residential Service Requests and Complaints Ranking and Score")
 st.markdown("##### NYC Fire Department Residential Incidence Ranking and Score")
 st.markdown("##### NYC Police Department Residential Incidences and Cases Ranking and Score")
