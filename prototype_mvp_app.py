@@ -34,6 +34,8 @@ with col1:
     st.markdown("Kuzi Rusere, Umair Shaikh")
 
     st.markdown("### **Project Introduction**")
+    st.markdown("Developing a Score to Measure Riskiness of Residential buildings, Homes, Apartments and Condos as "
+                "part of an insurance policy underwriting. The idea is to design and develop a model that will aid insurance underwriters in assessing the riskiness of residential properties in New York City.")
     st.markdown("***Business Proposition:*** ")
     st.markdown("***Methodology:*** ")
     """
