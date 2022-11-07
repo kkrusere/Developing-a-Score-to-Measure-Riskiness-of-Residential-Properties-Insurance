@@ -110,7 +110,8 @@ with col2:
         borough_option = st.selectbox(
             'Which Borough?:',
             (" ","Bronx", "Brooklyn", "Manhattan", "Queens", "Staten Island"))
-        st.success(f"we are going to look at {borough_option}")
+        if borough_option != " ":
+            st.success(f"we are going to look at {borough_option}")
         
 st.markdown("##### NYC 311 Residential Service Requests and Complaints Ranking and Score")
 st.markdown("##### NYC Fire Department Residential Incidence Ranking and Score")
