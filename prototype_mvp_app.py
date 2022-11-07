@@ -35,11 +35,10 @@ with col1:
 
 
     st.markdown("***Business Proposition:*** ")
-    st.markdown("Developing a Score to Measure Riskiness of Residential buildings, Homes, Apartments and Condos as "
-            "part of an insurance policy underwriting. The idea is to design and develop a model that will aid "
-            "insurance underwriters in assessing the riskiness of residential properties in New York City. For this, we utized data collected from the "
-            "NYC Opendata repository, created a Machine Learning Clustering model and Analized the clusters, depending on the charateristics of the clusters, "
-            "they were ranked thus providing a scoring mechanism")
+    st.markdown("Developing a Score to Measure the Riskiness of Residential buildings, Homes, Apartments, and Condos as part of an insurance policy underwriting. "
+                "The idea is to design and develop a model that will aid insurance underwriters in assessing the riskiness of residential properties in New York City. "
+                "For this, we utilized data collected from the NYC Opendata repository, created a Machine Learning Clustering model, and Analyzed the clusters, "
+                "depending on the characteristics of the clusters, they were ranked thus providing a scoring mechanism.")
     st.markdown("***Methodology:*** ")
     """
     1. 
