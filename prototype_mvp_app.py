@@ -94,10 +94,12 @@ with col3:
 
 st.markdown("----")
 st.markdown("### Score Measurements by Borough and/or Zipcode")
-st.markdown("\nHere we show the scoring measurements of each of the Boroughs and/or Zipcodes with respect to the fire department incedences, police department cases and incidences, and the 311 residential service request and complaints. So, depending on the zipcode or the borough in New York City, there is a ranking measurement score that has been assigned to it from our modeling and cluster analysis.") 
-col1, col2,col3 = st.columns((0.1,1,0.1))
+st.markdown("\nHere we show the scoring measurements of each of the Boroughs and/or Zipcodes with respect to the fire department incedences, police department cases and "
+            "incidences, and the 311 residential service request and complaints. So, depending on the zipcode or the borough in New York City, there is a ranking measurement "
+            "score that has been assigned to it from our modeling and cluster analysis.") 
+col1, col2,col3 = st.columns((0.5,1,0.5))
+st.markdown("</h5>Here, Please select the method you want to use for looking up the riskiness of the residential property, either Borough or Zipcode</h5>, </center>", unsafe_allow_html=True)
 with col2:
-    st.markdown("### Here, Please select the method you want to use for looking up the riskiness of the residential property, either Borough or Zipcode")
     option = st.selectbox(
     'Please select a method:',
     ('Borough', 'Zipcode'))
