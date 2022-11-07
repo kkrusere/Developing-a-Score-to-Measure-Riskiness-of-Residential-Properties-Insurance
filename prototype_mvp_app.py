@@ -84,6 +84,7 @@ with col1:
     st.markdown("<center><img src='https://github.com/kkrusere/Developing-a-Score-to-Measure-Riskiness-of-Residential-Properties-Insurance/blob/main/assets/FDNYC.png?raw=1' width=100/></center>", unsafe_allow_html=True)
 with col3:
     pass
+
 col1, col2,col3 = st.columns((1,0.1,1))
 with col1:
     st.markdown("##### NYC Police Department Residential Incidences and Cases")
@@ -94,6 +95,15 @@ with col3:
 st.markdown("----")
 st.markdown("### Score Measurements by Borough and/or Zipcode")
 st.markdown("\nHere we show the scoring measurements of each of the Boroughs and/or Zipcodes with respect to the fire department incedences, police department cases and incidences, and the 311 residential service request and complaints. So, depending on the zipcode or the borough in New York City, there is a ranking measurement score that has been assigned to it from our modeling and cluster analysis.") 
+col1, col2,col3 = st.columns((0.1,1,0.1))
+with col2:
+    st.markdown("### Here, Please select the method you want to use for looking up the riskiness of the residential property, either Borough or Zipcode")
+    option = st.selectbox(
+    'Please select a method:',
+    ('Borough', 'Zipcode'))
+
+    st.write('You selected:', option)
+
 st.markdown("##### NYC 311 Residential Service Requests and Complaints Ranking and Score")
 st.markdown("##### NYC Fire Department Residential Incidence Ranking and Score")
 st.markdown("##### NYC Police Department Residential Incidences and Cases Ranking and Score")
