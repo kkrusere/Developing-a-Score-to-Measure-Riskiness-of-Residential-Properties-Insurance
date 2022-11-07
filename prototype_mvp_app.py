@@ -98,8 +98,8 @@ st.markdown("\nHere we show the scoring measurements of each of the Boroughs and
             "incidences, and the 311 residential service request and complaints. So, depending on the zipcode or the borough in New York City, there is a ranking measurement "
             "score that has been assigned to it from our modeling and cluster analysis.") 
 
-st.markdown("</h5>Here, Please select the method you want to use for looking up the riskiness of the residential property, either Borough or Zipcode</h5></center>", unsafe_allow_html=True)
-col1, col2,col3 = st.columns((0.5,1,0.5))
+st.markdown("##### Here, Please select the method you want to use for looking up the riskiness of the residential property, either Borough or Zipcode.")
+col1, col2,col3 = st.columns((0.1,1,0.8))
 with col2:
     option = st.selectbox(
     'Please select a method:',
