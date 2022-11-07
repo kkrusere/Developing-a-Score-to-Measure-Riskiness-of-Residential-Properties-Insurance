@@ -124,17 +124,21 @@ with col2:
             zipcode = st.text_input("Please input the zipcode:")
             if zipcode != "":
                 zipcode = int(zipcode)
+                check = False
                 for key in nyc_zipcode_dict:
                     if key == "Queens":
                         for alist in nyc_zipcode_dict[key]:
                             if zipcode in alist:
                                 st.success(f"We are going to look at {zipcode} that is part of the {key} borough")
+                                check = True
                                 break
                     elif zipcode in nyc_zipcode_dict[key]:
                         st.success(f"We are going to look at {zipcode} that is part of the {key} borough")
+                        check = True
                         break
-                    else:
-                        st.error("Zipcode not for NYC, Please enter an NYC zipcode")
+                if check == False:
+                    st.error("Zipcode not for NYC, Please enter an NYC zipcode")
+
             else:
                 pass
         except:
