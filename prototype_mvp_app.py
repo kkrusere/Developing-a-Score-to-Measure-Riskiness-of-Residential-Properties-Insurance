@@ -116,7 +116,7 @@ with col2:
         try:
             zipcode = st.text_input("Please input the zipcode:")
             if zipcode != "":
-                zipcode = int()
+                zipcode = int(zipcode)
             else:
                 pass
         except:
