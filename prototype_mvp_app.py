@@ -103,10 +103,15 @@ col1, col2,col3 = st.columns((0.1,1,0.8))
 with col2:
     option = st.selectbox(
     'Please select a method:',
-    ('Borough', 'Zipcode'))
+    (" ",'Borough', 'Zipcode'))
 
     st.write('You selected:', option)
-
+    if option == 'Borough':
+        borough_option = st.selectbox(
+            'Which Borough?:',
+            (" ","Bronx", "Brooklyn", "Manhattan", "Queens", "Staten Island"))
+        st.success(f"we are going to look at {borough_option}")
+        
 st.markdown("##### NYC 311 Residential Service Requests and Complaints Ranking and Score")
 st.markdown("##### NYC Fire Department Residential Incidence Ranking and Score")
 st.markdown("##### NYC Police Department Residential Incidences and Cases Ranking and Score")
