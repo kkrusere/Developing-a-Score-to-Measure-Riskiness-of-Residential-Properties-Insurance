@@ -1,7 +1,14 @@
 import streamlit as st
 
+nyc_zipcode_dict = {
+                    "Manhattan":range(10001,10283),
+                    "Staten Island":range(10301,10315),
+                    "Bronx":range(10451,10476),
+                    "Queens":[range(11004,11110), range(11351,11698)],
+                    "Brooklyn":range(11201,11257)
+}
 
-st.set_page_config( page_title="Cultural Health Moments App",
+st.set_page_config( page_title="MVP_App",
                     page_icon= "random",
                     layout="wide"
  )
@@ -117,7 +124,17 @@ with col2:
             zipcode = st.text_input("Please input the zipcode:")
             if zipcode != "":
                 zipcode = int(zipcode)
-                st.success(f"we are going to look at {zipcode}")
+                for key in nyc_zipcode_dict:
+                    if key == "Queens":
+                        for alist in nyc_zipcode_dict[key]:
+                            if zipcode in alist:
+                                st.success(f"We are going to look at {zipcode} that is part of the {key} borough")
+                                break
+                    elif zipcode in nyc_zipcode_dict[key]:
+                        st.success(f"We are going to look at {zipcode} that is part of the {key} borough")
+                        break
+                    else:
+                        st.error("Zipcode not for NYC, Please enter an NYC zipcode")
             else:
                 pass
         except:
@@ -127,3 +144,6 @@ st.markdown("##### NYC Fire Department Residential Incidence Ranking and Score")
 st.markdown("##### NYC Police Department Residential Incidences and Cases Ranking and Score")
 
 st.markdown("----")
+
+
+
