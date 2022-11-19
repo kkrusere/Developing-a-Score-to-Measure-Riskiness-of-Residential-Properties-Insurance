@@ -230,8 +230,12 @@ with col2:
                 pass
         except:
             st.warning("Please enter a valid Zipcode")    
+the_pass  = False
 
 if zipcode != " " or borough_option != " ":
+    the_pass = True 
+    
+if the_pass:
     st.markdown("##### NYC 311 Residential Service Requests and Complaints Ranking and Score")
     nyc_csr311_data_cluster_belonging_dict_borough = {'MANHATTAN': '0',
                                             'BROOKLYN': '2',
