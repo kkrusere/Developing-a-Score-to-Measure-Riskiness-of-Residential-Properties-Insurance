@@ -242,7 +242,7 @@ with col3:
                 'LOC_OF_OCCUR_DESC',
                 'CRM_ATPT_CPTD_CD',
                 'PREM_TYP_DESC'))
-    pcluster_df = get_cluster_df(option5,cluster_grouped_dataset=nypd_data.groupby('Cluster'))
+    cluster_df = get_cluster_df(option5,cluster_grouped_dataset=nypd_data.groupby('Cluster'))
     #first we take a look at the distribution of the boroughs in the cluster
     fig = px.histogram(cluster_df, x = 'BOROUGH', color=option6, title=f"The Frequency Distribution of the Borough in Cluster {option5} of the NYPD Modeled Dataset")
     st.plotly_chart(fig)
