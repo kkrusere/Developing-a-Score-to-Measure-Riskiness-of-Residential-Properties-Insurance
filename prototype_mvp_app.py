@@ -205,12 +205,7 @@ with col1:
 with col3:
     pass
 
-st.markdown("###### Cluster Distribution")
-col1, col2,col3 = st.columns((1,0.1,1))
-col1, col2,col3 = st.columns((1,0.1,1))
-st.markdown("###### Borough Distribution")
-col1, col2,col3 = st.columns((1,0.1,1))
-col1, col2,col3 = st.columns((1,0.1,1))
+##############################################################################
 
 col1, col2,col3 = st.columns((1,0.1,1))
 with col1:
