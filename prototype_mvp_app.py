@@ -205,6 +205,88 @@ with col1:
 with col3:
     pass
 
+##############################################
+fdnyc_data = pd.read_csv("https://raw.githubusercontent.com/kkrusere/Developing-a-Score-to-Measure-Riskiness-of-Residential-Properties-Insurance/main/data/MODEL_Fire_Incident_Dispatch_Data.csv")
+fdnyc_data.columns = ['Cluster', 'INCIDENT_DATETIME', 'BOROUGH', 'ZIPCODE','HIGHEST_ALARM_LEVEL', 'INCIDENT_CLASSIFICATION','INCIDENT_CLASSIFICATION_GROUP']
+fdnyc_data['ZIPCODE'] = fdnyc_data['ZIPCODE'].astype(str)
+fdnyc_data['Cluster'] = fdnyc_data['Cluster'].astype(str)
+fdnyc_data = fdnyc_data.replace(to_replace="RICHMOND / STATEN ISLAND", value="STATEN ISLAND")
+
+#Lets start by looking at the number of cluster in our data modeled data 
+temp_df = pd.DataFrame(fdnyc_data['Cluster'].value_counts())
+temp_df = temp_df.reset_index()
+temp_df.columns = [temp_df.columns[1], 'Count']
+
+
+st.dataframe(fdnyc_data, use_container_width= True)
+
+col1, col2,col3 = st.columns((1,0.1,1))
+with col1:
+    #let look at a histogram of the clusters 
+    fig = px.histogram(fdnyc_data, x = 'Cluster', title="The Frequency Distribution of the Clusters in the FDNYC Modeled Dataset")
+    st.plotly_chart(fig)
+with col3:
+     #let look at a picture of the above dataframe
+    fig = px.pie(temp_df, names='Cluster', values='Count', title="The Frequency Distribution of the Clusters in the FDNYC Modeled Dataset")
+    st.plotly_chart(fig)
+
+st.markdown("###### Cluster Distribution")
+col1, col2,col3 = st.columns((1,0.1,1))
+
+with col1:
+    optiona1 = st.selectbox(
+    'Please select a filter',
+                ('INCIDENT_DATETIME',  'INCIDENT_CLASSIFICATION','BOROUGH', 'ZIPCODE','HIGHEST_ALARM_LEVEL','INCIDENT_CLASSIFICATION_GROUP'))
+
+    #let look at a histogram of the clusters stratified by Borough distribution
+    fig = px.histogram(fdnyc_data, x = 'Cluster',color=optiona1, title="The Frequency Distribution of the Clusters in the FDNYC Modeled Dataset")
+    st.plotly_chart(fig)
+
+
+with col3:
+    optionb2 = st.selectbox(
+    'Please select a filter',
+                ( 'INCIDENT_DATETIME', 'INCIDENT_CLASSIFICATION', 'BOROUGH', 'ZIPCODE','HIGHEST_ALARM_LEVEL','INCIDENT_CLASSIFICATION_GROUP'))
+
+    #let look at a histogram of the clusters stratified by Borough distribution
+    fig = px.histogram(fdnyc_data, x = 'Cluster',color=optionb2, title="The Frequency Distribution of the Clusters in the FDNYC Modeled Dataset")
+    st.plotly_chart(fig)
+
+st.markdown("###### Borough Distribution")
+
+col1, col2,col3 = st.columns((1,0.1,1))
+
+
+with col1:
+    optionc3 = st.selectbox(
+    'Please select a the cluster',
+                ('0', '2', '7', '6', '4', '3', '1', '5', '8'))
+    optiond4 = st.selectbox(
+    'Please select a the filter',
+                ('INCIDENT_DATETIME', 'HIGHEST_ALARM_LEVEL', 'INCIDENT_CLASSIFICATION','ZIPCODE','INCIDENT_CLASSIFICATION_GROUP'))
+
+    cluster_df = get_cluster_df(optionc,cluster_grouped_dataset=fdnyc_data.groupby('Cluster'))
+
+        #first we take a look at the distribution of the boroughs in the cluster
+    fig = px.histogram(cluster_df, x = 'BOROUGH', color=optiond4, title=f"The Frequency Distribution of the Borough in Cluster {optionc3} of the FDNYC Modeled Dataset")
+    st.plotly_chart(fig)
+
+with col3:
+    optione5 = st.selectbox(
+    'Please select a cluster',
+                ('0', '2', '7', '6', '4', '3', '1', '5', '8'))
+    optionf6 = st.selectbox(
+    'Please select a filter',
+                ('INCIDENT_DATETIME',  'INCIDENT_CLASSIFICATION','ZIPCODE','HIGHEST_ALARM_LEVEL','INCIDENT_CLASSIFICATION_GROUP'))
+
+    cluster_df = get_cluster_df(optione,cluster_grouped_dataset=fdnyc_data.groupby('Cluster'))
+    #first we take a look at the distribution of the boroughs in the cluster
+    fig = px.histogram(cluster_df, x = 'BOROUGH', color=optionf6, title=f"The Frequency Distribution of the Borough in Cluster {optione5} of the FDNYC Modeled Dataset")
+    st.plotly_chart(fig)
+
+
+
+
 ##############################################################################
 
 col1, col2,col3 = st.columns((1,0.1,1))
