@@ -363,7 +363,7 @@ nyc_csr311_data_cluster_belonging_dict_zip = {'10031': '0',
 if zipcode:
     st.write(f"For NYC 311 Residential Service Requests and Complaints the zipcode you entered had is most likely to be in cluster: {nyc_csr311_data_cluster_belonging_dict_zip[str(zipcode)]}")
 else:
-    st.markdown(f"For NYC 311 Residential Service Requests and Complaints the Borough you entered had is most likely to be in cluster: {nyc_csr311_data_cluster_belonging_dict_borough[borough_option]}")
+    st.write(f"For NYC 311 Residential Service Requests and Complaints the Borough you entered had is most likely to be in cluster: {nyc_csr311_data_cluster_belonging_dict_borough[borough_option]}")
 
 
 st.markdown("##### NYC Fire Department Residential Incidence Ranking and Score")
