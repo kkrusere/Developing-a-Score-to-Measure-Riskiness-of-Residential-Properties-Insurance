@@ -153,13 +153,14 @@ with col1:
     option1 = st.selectbox(
     'Please select a filter',
                 (
+                'LOC_OF_OCCUR_DESC',
+                'PREM_TYP_DESC',
+                'ZIPCODE',
                 'OFNS_DESC',
                 'CRM_ATPT_CPTD_CD',
                 'LAW_CAT_CD',
-                'BOROUGH',
-                'LOC_OF_OCCUR_DESC',
-                'PREM_TYP_DESC',
-                'ZIPCODE'))
+                'BOROUGH'))
+                
     #let look at a histogram of the clusters stratified by Borough distribution
     fig = px.histogram(nypd_data, x = 'Cluster',color=option1, title="The Frequency Distribution of the Clusters in the NYPD Modeled Dataset")
     st.plotly_chart(fig)
