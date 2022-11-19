@@ -4,9 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-urlpatterns = [
-    
-]
+
 nyc_zipcode_dict = {
                     "Manhattan":range(10001,10283),
                     "Staten Island":range(10301,10315),
@@ -19,6 +17,34 @@ st.set_page_config( page_title="MVP_App",
                     page_icon= "random",
                     layout="wide"
  )
+
+
+@st.cache(allow_output_mutation=True)
+def get_cluster_df(cluster_name, cluster_grouped_dataset):
+  """
+  This function basically takes in the name of the cluster and uses that to filter the `cluster_grouped_dataset`
+  The function returns a dataframe filtered for the specific cluster (the cluster is also reindexed)
+  """
+  cluster_filtered_df = cluster_grouped_dataset.get_group(cluster_name)
+  cluster_filtered_df = cluster_filtered_df.reset_index(drop=True)
+
+  return cluster_filtered_df
+
+@st.cache(allow_output_mutation=True)
+def get_borough_df(cluster_df, borough_name):
+  borough_grouped_ob = cluster_df.groupby('INCIDENT_BOROUGH')
+  """
+  This fuction basically takes in the specific cluster filtered dataframe and return the borough filtered dataframe
+  We will have a try~catch here to handle cases where the requested borough is not in the dataset/dataframe
+  """
+  try:
+    borough_df = borough_grouped_ob.get_group(borough_name)
+    borough_df = borough_df.reset_index(drop= True)
+  except:
+    return f"We could not process your request for the {borough_name} filtered dataframe. The borough might not be present in the cluster specified"
+  return borough_df
+
+
 
 col1, col2, col3 = st.columns((.1,1,.1))
 
@@ -183,8 +209,44 @@ with col3:
     st.plotly_chart(fig)
 
 st.markdown("###### Borough Distribution")
+cluster_0_df = get_cluster_df('0',cluster_grouped_dataset=nypd_data.groupby('Cluster'))
+
 col1, col2,col3 = st.columns((1,0.1,1))
-col1, col2,col3 = st.columns((1,0.1,1))
+
+with col1:
+    option3 = st.selectbox(
+    'Please select a the cluster',
+                ('1', '3', '4', '2', '0', '5'))
+    option4 = st.selectbox(
+    'Please select a the filter',
+                (
+                'LAW_CAT_CD',
+                'LOC_OF_OCCUR_DESC',
+                'OFNS_DESC',
+                'CRM_ATPT_CPTD_CD',
+                'PREM_TYP_DESC',))
+    cluster_df = get_cluster_df(option3,cluster_grouped_dataset=nypd_data.groupby('Cluster'))
+
+        #first we take a look at the distribution of the boroughs in the cluster
+    fig = px.histogram(cluster_df, x = 'BOROUGH', color=option4, title=f"The Frequency Distribution of the Borough in Cluster {option3} of the NYPD Modeled Dataset")
+    st.plotly_chart(fig)
+
+with col2:
+    option5 = st.selectbox(
+    'Please select a cluster',
+                ('1', '4', '2', '3', '0', '5'))
+    option6 = st.selectbox(
+    'Please select a filter',
+                ('OFNS_DESC',
+                'LAW_CAT_CD',
+                'LOC_OF_OCCUR_DESC',
+                'CRM_ATPT_CPTD_CD',
+                'PREM_TYP_DESC'))
+    pcluster_df = get_cluster_df(option5,cluster_grouped_dataset=nypd_data.groupby('Cluster'))
+    #first we take a look at the distribution of the boroughs in the cluster
+    fig = px.histogram(cluster_df, x = 'BOROUGH', color=option6, title=f"The Frequency Distribution of the Borough in Cluster {option5} of the NYPD Modeled Dataset")
+    st.plotly_chart(fig)
+
 
 st.markdown("----")
 st.markdown("### Score Measurements by Borough and/or Zipcode")
@@ -234,7 +296,7 @@ the_pass  = False
 
 if zipcode != " " or borough_option != " ":
     the_pass = True 
-    
+
 if the_pass:
     st.markdown("##### NYC 311 Residential Service Requests and Complaints Ranking and Score")
     nyc_csr311_data_cluster_belonging_dict_borough = {'MANHATTAN': '0',
