@@ -231,7 +231,7 @@ with col1:
     fig = px.histogram(cluster_df, x = 'BOROUGH', color=option4, title=f"The Frequency Distribution of the Borough in Cluster {option3} of the NYPD Modeled Dataset")
     st.plotly_chart(fig)
 
-with col2:
+with col3:
     option5 = st.selectbox(
     'Please select a cluster',
                 ('1', '4', '2', '3', '0', '5'))
