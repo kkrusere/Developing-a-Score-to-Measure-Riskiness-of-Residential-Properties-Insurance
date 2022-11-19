@@ -361,9 +361,9 @@ nyc_csr311_data_cluster_belonging_dict_zip = {'10031': '0',
  '10129': '1',
  '11430': '1'}   
 if zipcode:
-    st.write(f"For NYC 311 Residential Service Requests and Complaints the zipcode you entered had is most likely to be in cluster: {nyc_csr311_data_cluster_belonging_dict_zip[str(zipcode)]}")
+    st.markdown(f"For NYC 311 Residential Service Requests and Complaints the zipcode you entered had is most likely to be in cluster: {nyc_csr311_data_cluster_belonging_dict_zip[str(zipcode)]}")
 else:
-    st.write(f"For NYC 311 Residential Service Requests and Complaints the Borough you entered had is most likely to be in cluster: {nyc_csr311_data_cluster_belonging_dict_borough[borough_option]}")
+    st.markdown(f"For NYC 311 Residential Service Requests and Complaints the Borough you entered had is most likely to be in cluster: {nyc_csr311_data_cluster_belonging_dict_borough[borough_option]}")
 
 
 st.markdown("##### NYC Fire Department Residential Incidence Ranking and Score")
@@ -564,9 +564,9 @@ fdnyc_data_cluster_belonging_dict_zip = {'10453': '0',
  '11434': '5'}
 
 if zipcode:
-    st.write(f"For NYC Fire Department Residential Incidence the zipcode you entered had is most likely to be in cluster: {fdnyc_data_cluster_belonging_dict_zip[str(zipcode)]}")
+    st.markdown(f"For NYC Fire Department Residential Incidence the zipcode you entered had is most likely to be in cluster: {fdnyc_data_cluster_belonging_dict_zip[str(zipcode)]}")
 else:
-    st.write(f"For NYC Fire Department Residential Incidence the Borough you entered had is most likely to be in cluster: {fdnyc_data_cluster_belonging_dict_borough[borough_option]}")
+    st.markdown(f"For NYC Fire Department Residential Incidence the Borough you entered had is most likely to be in cluster: {fdnyc_data_cluster_belonging_dict_borough[borough_option]}")
 
 
 st.markdown("##### NYC Police Department Residential Incidences and Cases Ranking and Score")
@@ -753,9 +753,9 @@ nypd_data_cluster_belonging_dict_zip= {'11212': '1','11207': '1','11221': '1','1
  '10120': '5'}
 
 if zipcode:
-    st.write(f"For NYC Police Department Residential Incidences and Cases the zipcode you entered had is most likely to be in cluster: {nypd_data_cluster_belonging_dict_zip[str(zipcode)]}")
+    st.markdown(f"For NYC Police Department Residential Incidences and Cases the zipcode you entered had is most likely to be in cluster: {nypd_data_cluster_belonging_dict_zip[str(zipcode)]}")
 else:
-    st.write(f"For NYC Police Department Residential Incidences and Cases the Borough you entered had is most likely to be in cluster: {nypd_data_cluster_belonging_dict_borough[borough_option]}")
+    st.markdown(f"For NYC Police Department Residential Incidences and Cases the Borough you entered had is most likely to be in cluster: {nypd_data_cluster_belonging_dict_borough[borough_option]}")
 
 
 st.markdown("----")
