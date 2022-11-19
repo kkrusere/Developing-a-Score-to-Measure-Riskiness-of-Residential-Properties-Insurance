@@ -423,7 +423,7 @@ if zipcode != " " or borough_option != " ":
     '11697': '1',
     '10129': '1',
     '11430': '1'}   
-    if zipcode != "":
+    if zipcode != " ":
         st.markdown(f"For NYC 311 Residential Service Requests and Complaints the zipcode you entered had is most likely to be in cluster: {nyc_csr311_data_cluster_belonging_dict_zip[str(zipcode)]}")
     else:
         st.markdown(f"For NYC 311 Residential Service Requests and Complaints the Borough you entered had is most likely to be in cluster: {nyc_csr311_data_cluster_belonging_dict_borough[borough_option]}")
@@ -626,7 +626,7 @@ if zipcode != " " or borough_option != " ":
     '10000': '4',
     '11434': '5'}
 
-    if zipcode != "":
+    if zipcode != " ":
         st.markdown(f"For NYC Fire Department Residential Incidence the zipcode you entered had is most likely to be in cluster: {fdnyc_data_cluster_belonging_dict_zip[str(zipcode)]}")
     else:
         st.markdown(f"For NYC Fire Department Residential Incidence the Borough you entered had is most likely to be in cluster: {fdnyc_data_cluster_belonging_dict_borough[borough_option]}")
@@ -815,7 +815,7 @@ if zipcode != " " or borough_option != " ":
     '10285': '5',
     '10120': '5'}
 
-    if zipcode != "":
+    if zipcode != " ":
         st.markdown(f"For NYC Police Department Residential Incidences and Cases the zipcode you entered had is most likely to be in cluster: {nypd_data_cluster_belonging_dict_zip[str(zipcode)]}")
     else:
         st.markdown(f"For NYC Police Department Residential Incidences and Cases the Borough you entered had is most likely to be in cluster: {nypd_data_cluster_belonging_dict_borough[borough_option]}")
