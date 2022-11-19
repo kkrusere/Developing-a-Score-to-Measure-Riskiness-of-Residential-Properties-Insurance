@@ -129,7 +129,9 @@ nypd_data['ZIPCODE'] = nypd_data['ZIPCODE'].astype(str)
 nypd_data['Cluster'] = nypd_data['Cluster'].astype(str)
 
 st.dataframe(nypd_data, use_container_width= True)
-
+#let look at a histogram of the clusters 
+fig = px.histogram(nypd_data, x = 'Cluster', title="The Frequency Distribution of the Clusters in the NYPD Modeled Dataset")
+st.plotly_chart(fig)
 
 st.markdown("###### Cluster Distribution")
 col1, col2,col3 = st.columns((1,0.1,1))
