@@ -176,7 +176,7 @@ with col1:
                 ('0', '1', '3', '2'))
     optiond = st.selectbox(
     'Please select a the filter',
-                ('Agency Name', 'Complaint Type', 'City','Descriptor','Location Type', 'ZIPCODE'))
+                ('Agency Name', 'Complaint Type','Descriptor','Location Type', 'ZIPCODE'))
 
     cluster_df = get_cluster_df(optionc,cluster_grouped_dataset=nyc_csr311_data.groupby('Cluster'))
 
@@ -190,7 +190,7 @@ with col3:
                 ('0', '1', '3', '2'))
     optionf = st.selectbox(
     'Please select a filter',
-                ('Agency Name', 'Complaint Type', 'City','Descriptor','Location Type', 'ZIPCODE', 'Complaint Type', 'City','Descriptor'))
+                ('Agency Name', 'Complaint Type','Descriptor','Location Type', 'ZIPCODE', 'Complaint Type', 'City','Descriptor'))
 
     cluster_df = get_cluster_df(optione,cluster_grouped_dataset=nyc_csr311_data.groupby('Cluster'))
     #first we take a look at the distribution of the boroughs in the cluster
