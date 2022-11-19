@@ -85,12 +85,29 @@ with col1:
     st.markdown("<center><img src='https://github.com/kkrusere/Developing-a-Score-to-Measure-Riskiness-of-Residential-Properties-Insurance/blob/main/assets/nyc311-logo.png?raw=1' width=100/></center>", unsafe_allow_html=True)
 with col3:
     pass
+
+
+st.markdown("###### Cluster Distribution")
 col1, col2,col3 = st.columns((1,0.1,1))
+col1, col2,col3 = st.columns((1,0.1,1))
+st.markdown("###### Borough Distribution")
+col1, col2,col3 = st.columns((1,0.1,1))
+col1, col2,col3 = st.columns((1,0.1,1))
+col1, col2,col3 = st.columns((1,0.1,1))
+
+
 with col1:
     st.markdown("##### NYC Fire Department Residential Incidence")
     st.markdown("<center><img src='https://github.com/kkrusere/Developing-a-Score-to-Measure-Riskiness-of-Residential-Properties-Insurance/blob/main/assets/FDNYC.png?raw=1' width=100/></center>", unsafe_allow_html=True)
 with col3:
     pass
+
+st.markdown("###### Cluster Distribution")
+col1, col2,col3 = st.columns((1,0.1,1))
+col1, col2,col3 = st.columns((1,0.1,1))
+st.markdown("###### Borough Distribution")
+col1, col2,col3 = st.columns((1,0.1,1))
+col1, col2,col3 = st.columns((1,0.1,1))
 
 col1, col2,col3 = st.columns((1,0.1,1))
 with col1:
@@ -98,6 +115,13 @@ with col1:
     st.markdown("<center><img src='https://github.com/kkrusere/Developing-a-Score-to-Measure-Riskiness-of-Residential-Properties-Insurance/blob/main/assets/NYPD.png?raw=1' width=100/></center>", unsafe_allow_html=True)
 with col3:
     pass
+
+st.markdown("###### Cluster Distribution")
+col1, col2,col3 = st.columns((1,0.1,1))
+col1, col2,col3 = st.columns((1,0.1,1))
+st.markdown("###### Borough Distribution")
+col1, col2,col3 = st.columns((1,0.1,1))
+col1, col2,col3 = st.columns((1,0.1,1))
 
 st.markdown("----")
 st.markdown("### Score Measurements by Borough and/or Zipcode")
@@ -143,8 +167,15 @@ with col2:
                 pass
         except:
             st.warning("Please enter a valid Zipcode")    
+
+
 st.markdown("##### NYC 311 Residential Service Requests and Complaints Ranking and Score")
+
+
 st.markdown("##### NYC Fire Department Residential Incidence Ranking and Score")
+
+
+
 st.markdown("##### NYC Police Department Residential Incidences and Cases Ranking and Score")
 
 st.markdown("----")
