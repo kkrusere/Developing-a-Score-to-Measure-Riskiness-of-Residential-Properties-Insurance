@@ -120,13 +120,82 @@ with col3:
     pass
 
 
+nyc_csr311_data = pd.read_csv("https://raw.githubusercontent.com/kkrusere/Developing-a-Score-to-Measure-Riskiness-of-Residential-Properties-Insurance/main/data/MODEL_NYC311Open_Data.csv")
+nyc_csr311_data['ZIPCODE'] = nyc_csr311_data['ZIPCODE'].astype(str)
+nyc_csr311_data['Cluster'] = nyc_csr311_data['Cluster'].astype(str)
+
+#Lets start by looking at the number of cluster in our data modeled data 
+temp_df = pd.DataFrame(nyc_csr311_data['Cluster'].value_counts())
+temp_df = temp_df.reset_index()
+temp_df.columns = [temp_df.columns[1], 'Count']
+
+
+st.dataframe(nyc_csr311_data, use_container_width= True)
+
+col1, col2,col3 = st.columns((1,0.1,1))
+with col1:
+    #let look at a histogram of the clusters 
+    fig = px.histogram(nyc_csr311_data, x = 'Cluster', title="The Frequency Distribution of the Clusters in the NYC 311 Modeled Dataset")
+    st.plotly_chart(fig)
+with col3:
+     #let look at a picture of the above dataframe
+    fig = px.pie(temp_df, names='Cluster', values='Count', title="The Frequency Distribution of the Clusters in the NYC 311 Modeled Dataset")
+    st.plotly_chart(fig)
+
 st.markdown("###### Cluster Distribution")
 col1, col2,col3 = st.columns((1,0.1,1))
-col1, col2,col3 = st.columns((1,0.1,1))
+
+with col1:
+    optiona = st.selectbox(
+    'Please select a filter',
+                ('Agency Name', 'Complaint Type', 'Descriptor','Location Type', 'ZIPCODE', 'City', 'BOROUGH'))
+
+    #let look at a histogram of the clusters stratified by Borough distribution
+    fig = px.histogram(nyc_csr311_data, x = 'Cluster',color=optiona, title="The Frequency Distribution of the Clusters in the NYC 311 Modeled Dataset")
+    st.plotly_chart(fig)
+
+
+with col3:
+    optionb = st.selectbox(
+    'Please select a filter',
+                ('Agency Name', 'Descriptor','Location Type', 'ZIPCODE', 'Complaint Type', 'City', 'BOROUGH'))
+
+    #let look at a histogram of the clusters stratified by Borough distribution
+    fig = px.histogram(nyc_csr311_data, x = 'Cluster',color=optionb, title="The Frequency Distribution of the Clusters in the NYC 311 Modeled Dataset")
+    st.plotly_chart(fig)
+
 st.markdown("###### Borough Distribution")
+cluster_0_df = get_cluster_df('0',cluster_grouped_dataset=nyc_csr311_data.groupby('Cluster'))
+
 col1, col2,col3 = st.columns((1,0.1,1))
-col1, col2,col3 = st.columns((1,0.1,1))
-col1, col2,col3 = st.columns((1,0.1,1))
+
+with col1:
+    optionc = st.selectbox(
+    'Please select a the cluster',
+                ('0', '1', '3', '2'))
+    optiond = st.selectbox(
+    'Please select a the filter',
+                ('Agency Name', 'Complaint Type', 'City','Descriptor','Location Type', 'ZIPCODE'))
+
+    cluster_df = get_cluster_df(optionc,cluster_grouped_dataset=nyc_csr311_data.groupby('Cluster'))
+
+        #first we take a look at the distribution of the boroughs in the cluster
+    fig = px.histogram(cluster_df, x = 'BOROUGH', color=optiond, title=f"The Frequency Distribution of the Borough in Cluster {optionc} of the NYC 311 Modeled Dataset")
+    st.plotly_chart(fig)
+
+with col3:
+    optione = st.selectbox(
+    'Please select a cluster',
+                ('0', '1', '3', '2'))
+    optionf = st.selectbox(
+    'Please select a filter',
+                ('Agency Name', 'Complaint Type', 'City','Descriptor','Location Type', 'ZIPCODE', 'Complaint Type', 'City','Descriptor'))
+
+    cluster_df = get_cluster_df(optione,cluster_grouped_dataset=nyc_csr311_data.groupby('Cluster'))
+    #first we take a look at the distribution of the boroughs in the cluster
+    fig = px.histogram(cluster_df, x = 'BOROUGH', color=optionf, title=f"The Frequency Distribution of the Borough in Cluster {optione} of the NYC 311 Modeled Dataset")
+    st.plotly_chart(fig)
+
 
 
 with col1:
