@@ -128,7 +128,7 @@ nypd_data = pd.read_csv("https://raw.githubusercontent.com/kkrusere/Developing-a
 nypd_data['ZIPCODE'] = nypd_data['ZIPCODE'].astype(str)
 nypd_data['Cluster'] = nypd_data['Cluster'].astype(str)
 
-st.dataframe(nypd_data)
+st.dataframe(nypd_data, use_container_width= True)
 
 
 st.markdown("###### Cluster Distribution")
