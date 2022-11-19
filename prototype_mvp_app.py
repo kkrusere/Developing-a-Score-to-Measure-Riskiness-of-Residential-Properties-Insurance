@@ -128,13 +128,23 @@ nypd_data = pd.read_csv("https://raw.githubusercontent.com/kkrusere/Developing-a
 nypd_data['ZIPCODE'] = nypd_data['ZIPCODE'].astype(str)
 nypd_data['Cluster'] = nypd_data['Cluster'].astype(str)
 
+#Lets start by looking at the number of cluster in our data modeled data 
+temp_df = pd.DataFrame(nypd_data['Cluster'].value_counts())
+temp_df = temp_df.reset_index()
+temp_df.columns = [temp_df.columns[1], 'Count']
+
+
 st.dataframe(nypd_data, use_container_width= True)
 
-col1, col2,col3 = st.columns((.1,1,.1))
-with col2:
+col1, col2,col3 = st.columns((1,0.1,1))
+with col1:
     #let look at a histogram of the clusters 
     fig = px.histogram(nypd_data, x = 'Cluster', title="The Frequency Distribution of the Clusters in the NYPD Modeled Dataset")
-    st.plotly_chart(fig, use_container_width = True)
+    st.plotly_chart(fig)
+with col3:
+     #let look at a picture of the above dataframe
+    fig = px.pie(temp_df, names='Cluster', values='Count', title="The Frequency Distribution of the Clusters in the NYPD Modeled Dataset")
+    st.plotly_chart(fig)
 
 st.markdown("###### Cluster Distribution")
 col1, col2,col3 = st.columns((1,0.1,1))
@@ -147,7 +157,7 @@ with col1:
 
 
 with col3:
-    
+
     #let look at a histogram of the clusters stratified by Borough distribution
     fig = px.histogram(nypd_data, x = 'Cluster',color="BOROUGH", title="The Frequency Distribution of the Clusters in the NYPD Modeled Dataset")
     st.plotly_chart(fig)
