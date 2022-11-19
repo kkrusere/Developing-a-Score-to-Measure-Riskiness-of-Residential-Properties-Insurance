@@ -236,7 +236,7 @@ col1, col2,col3 = st.columns((1,0.1,1))
 with col1:
     optiona1 = st.selectbox(
     'Please select a filter',
-                ('INCIDENT_DATETIME',  'INCIDENT_CLASSIFICATION','BOROUGH', 'ZIPCODE','HIGHEST_ALARM_LEVEL','INCIDENT_CLASSIFICATION_GROUP'))
+                ('INCIDENT_CLASSIFICATION','BOROUGH', 'ZIPCODE','HIGHEST_ALARM_LEVEL','INCIDENT_CLASSIFICATION_GROUP'))
 
     #let look at a histogram of the clusters stratified by Borough distribution
     fig = px.histogram(fdnyc_data, x = 'Cluster',color=optiona1, title="The Frequency Distribution of the Clusters in the FDNYC Modeled Dataset")
@@ -246,7 +246,7 @@ with col1:
 with col3:
     optionb2 = st.selectbox(
     'Please select a filter',
-                ( 'INCIDENT_DATETIME', 'INCIDENT_CLASSIFICATION', 'HIGHEST_ALARM_LEVEL','BOROUGH', 'ZIPCODE','INCIDENT_CLASSIFICATION_GROUP'))
+                (  'INCIDENT_CLASSIFICATION', 'HIGHEST_ALARM_LEVEL','BOROUGH', 'ZIPCODE','INCIDENT_CLASSIFICATION_GROUP'))
 
     #let look at a histogram of the clusters stratified by Borough distribution
     fig = px.histogram(fdnyc_data, x = 'Cluster',color=optionb2, title="The Frequency Distribution of the Clusters in the FDNYC Modeled Dataset")
@@ -263,7 +263,7 @@ with col1:
                 ('0', '2', '7', '6', '4', '3', '1', '5', '8'))
     optiond4 = st.selectbox(
     'Please select a the filter',
-                ('INCIDENT_DATETIME', 'HIGHEST_ALARM_LEVEL', 'INCIDENT_CLASSIFICATION','ZIPCODE','INCIDENT_CLASSIFICATION_GROUP'))
+                ('HIGHEST_ALARM_LEVEL', 'INCIDENT_CLASSIFICATION','ZIPCODE','INCIDENT_CLASSIFICATION_GROUP'))
 
     cluster_df = get_cluster_df(optionc,cluster_grouped_dataset=fdnyc_data.groupby('Cluster'))
 
@@ -277,7 +277,7 @@ with col3:
                 ('0', '2', '7', '6', '4', '3', '1', '5', '8'))
     optionf6 = st.selectbox(
     'Please select a filter',
-                ('INCIDENT_DATETIME',  'INCIDENT_CLASSIFICATION','ZIPCODE','HIGHEST_ALARM_LEVEL','INCIDENT_CLASSIFICATION_GROUP'))
+                ('INCIDENT_CLASSIFICATION','ZIPCODE','HIGHEST_ALARM_LEVEL','INCIDENT_CLASSIFICATION_GROUP'))
 
     cluster_df = get_cluster_df(optione,cluster_grouped_dataset=fdnyc_data.groupby('Cluster'))
     #first we take a look at the distribution of the boroughs in the cluster
