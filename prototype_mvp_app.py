@@ -150,7 +150,7 @@ st.markdown("###### Cluster Distribution")
 col1, col2,col3 = st.columns((1,0.1,1))
 
 with col1:
-    option = st.selectbox(
+    option1 = st.selectbox(
     'Please select a filter',
                 (
                 'OFNS_DESC',
@@ -161,12 +161,12 @@ with col1:
                 'PREM_TYP_DESC',
                 'ZIPCODE'))
     #let look at a histogram of the clusters stratified by Borough distribution
-    fig = px.histogram(nypd_data, x = 'Cluster',color=option, title="The Frequency Distribution of the Clusters in the NYPD Modeled Dataset")
+    fig = px.histogram(nypd_data, x = 'Cluster',color=option1, title="The Frequency Distribution of the Clusters in the NYPD Modeled Dataset")
     st.plotly_chart(fig)
 
 
 with col3:
-    option = st.selectbox(
+    option2 = st.selectbox(
     'Please select a filter',
                 (
                 'OFNS_DESC',
@@ -178,7 +178,7 @@ with col3:
                 'ZIPCODE'))
 
     #let look at a histogram of the clusters stratified by Borough distribution
-    fig = px.histogram(nypd_data, x = 'Cluster',color=option, title="The Frequency Distribution of the Clusters in the NYPD Modeled Dataset")
+    fig = px.histogram(nypd_data, x = 'Cluster',color=option2, title="The Frequency Distribution of the Clusters in the NYPD Modeled Dataset")
     st.plotly_chart(fig)
 
 st.markdown("###### Borough Distribution")
