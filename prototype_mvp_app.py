@@ -246,7 +246,7 @@ with col1:
 with col3:
     optionb2 = st.selectbox(
     'Please select a filter',
-                ( 'INCIDENT_DATETIME', 'INCIDENT_CLASSIFICATION', 'BOROUGH', 'ZIPCODE','HIGHEST_ALARM_LEVEL','INCIDENT_CLASSIFICATION_GROUP'))
+                ( 'INCIDENT_DATETIME', 'INCIDENT_CLASSIFICATION', 'HIGHEST_ALARM_LEVEL','BOROUGH', 'ZIPCODE','INCIDENT_CLASSIFICATION_GROUP'))
 
     #let look at a histogram of the clusters stratified by Borough distribution
     fig = px.histogram(fdnyc_data, x = 'Cluster',color=optionb2, title="The Frequency Distribution of the Clusters in the FDNYC Modeled Dataset")
