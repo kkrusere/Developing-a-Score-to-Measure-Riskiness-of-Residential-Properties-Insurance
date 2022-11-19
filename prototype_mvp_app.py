@@ -121,6 +121,7 @@ with col3:
 
 
 nyc_csr311_data = pd.read_csv("https://raw.githubusercontent.com/kkrusere/Developing-a-Score-to-Measure-Riskiness-of-Residential-Properties-Insurance/main/data/MODEL_NYC311Open_Data.csv")
+nyc_csr311_data.columns = ['Cluster', 'Unique Key', 'Agency Name', 'Complaint Type', 'Descriptor','Location Type', 'ZIPCODE', 'City', 'BOROUGH']
 nyc_csr311_data['ZIPCODE'] = nyc_csr311_data['ZIPCODE'].astype(str)
 nyc_csr311_data['Cluster'] = nyc_csr311_data['Cluster'].astype(str)
 
