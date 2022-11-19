@@ -1,5 +1,12 @@
 import streamlit as st
+import plotly.express as px
+import pandas as pd 
+import matplotlib.pyplot as plt
 
+
+urlpatterns = [
+    
+]
 nyc_zipcode_dict = {
                     "Manhattan":range(10001,10283),
                     "Staten Island":range(10301,10315),
