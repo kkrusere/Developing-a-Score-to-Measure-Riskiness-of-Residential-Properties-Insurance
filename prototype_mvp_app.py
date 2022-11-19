@@ -138,7 +138,20 @@ with col2:
 
 st.markdown("###### Cluster Distribution")
 col1, col2,col3 = st.columns((1,0.1,1))
-col1, col2,col3 = st.columns((1,0.1,1))
+
+with col1:
+
+    #let look at a histogram of the clusters stratified by Borough distribution
+    fig = px.histogram(nypd_data, x = 'Cluster',color="BOROUGH", title="The Frequency Distribution of the Clusters in the NYPD Modeled Dataset")
+    st.plotly_chart(fig)
+
+
+with col3:
+    
+    #let look at a histogram of the clusters stratified by Borough distribution
+    fig = px.histogram(nypd_data, x = 'Cluster',color="BOROUGH", title="The Frequency Distribution of the Clusters in the NYPD Modeled Dataset")
+    st.plotly_chart(fig)
+
 st.markdown("###### Borough Distribution")
 col1, col2,col3 = st.columns((1,0.1,1))
 col1, col2,col3 = st.columns((1,0.1,1))
