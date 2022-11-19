@@ -160,7 +160,7 @@ with col1:
                 'CRM_ATPT_CPTD_CD',
                 'LAW_CAT_CD',
                 'BOROUGH'))
-                
+
     #let look at a histogram of the clusters stratified by Borough distribution
     fig = px.histogram(nypd_data, x = 'Cluster',color=option1, title="The Frequency Distribution of the Clusters in the NYPD Modeled Dataset")
     st.plotly_chart(fig)
@@ -231,7 +231,7 @@ with col2:
         except:
             st.warning("Please enter a valid Zipcode")    
 
-if zipcode != "" or borough_option != "":
+if zipcode != " " or borough_option != " ":
     st.markdown("##### NYC 311 Residential Service Requests and Complaints Ranking and Score")
     nyc_csr311_data_cluster_belonging_dict_borough = {'MANHATTAN': '0',
                                             'BROOKLYN': '2',
